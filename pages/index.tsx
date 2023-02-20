@@ -19,40 +19,35 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className=" px-10 min-h-screen">
+      <main className=" md:px-10 min-h-screen">
         <Header/>
-        <section className="flex flex-col md:flex-row ">
-          <div className='md:w-1/2 md:pr-8 md:mt-32 mb-4 md:mb-0'>
-            <div className='font-bold text-7xl md:w-3/4 lg:mb-12'>
+        <section className="flex flex-col lg:flex-row p-4">
+          <div className=' lg:w-1/2'>
+            <div className='font-bold text-5xl py-5 md:text-7xl md:w-3/4 lg:mb-12'>
               We make you ready to ace that driving test
             </div>
-            <div className="text-base flex items-center px-4 py-3 rounded-lg text-secondary bg-primary hover:bg-secondary-light w-max	">
+            <div className="text-base my-5 flex items-center px-4 py-3 rounded-lg text-secondary bg-primary hover:bg-secondary-light w-max	">
               <a href="#signup">Take a mock test</a>
               <HiArrowNarrowRight className="ml-2" />
             </div>
           </div>
-          <div className='md:w-1/2'>
+          <div className='lg:w-1/2'>
             <Image src={kidimage} alt="Icon" className="w-full h-auto"/>
           </div>
         </section>
-        <section id="how-it-works" className='flex justify-center flex-col '>
-          <div className='mx-auto'>AN EASY WAY TO STUDY BORING STUFF</div>
-          <div className='mx-auto font-bold text-7xl my-3'>HOW IT WORKS</div>
-          <div className='mx-auto'>
-
-          <div className='flex justify-center flex-row my-8'>
-
+        
+        <section id="how-it-works" className='flex justify-center flex-col p-4 text-center '>
+          <div className='mx-auto text-sm'>An easy way to study boring stuff</div>
+          <div className='mx-auto font-bold text-4xl my-3'>HOW IT WORKS</div>
+          <div className='flex justify-center my-8 mx-8 flex-col gap-4 md:flex-row '>
             <HomeCard
               title="Read the Driver's Manual"
               icon={BsFillBookFill}
             />
-
             <HomeCard
               title="Take practice tests"
               icon={GrPowerReset}
             />
-
-
             <HomeCard
               title="Pass your Legal test"
               icon={FaGraduationCap}
@@ -60,7 +55,6 @@ const Home: NextPage = () => {
 
           </div>
 
-          </div>
         </section>
       </main>
     </div>
