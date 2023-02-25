@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from "next/link";
 import Header from '../components/header'
 import HomeCard from '../components/homeCard'
 
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className=" md:px-10 min-h-screen">
-        <Header/>
+        <Header links={[{label:"Main", link:"#"}, {label:"How it works", link:"#how-it-works"}]} showButtons={true} />
         <section className="flex flex-col lg:flex-row p-4">
           <div className=' lg:w-1/2'>
             <div className='font-bold text-5xl py-5 md:text-7xl md:w-3/4 lg:mb-12'>
