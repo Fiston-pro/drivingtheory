@@ -59,7 +59,7 @@ const Header: React.FC<Props> = ({ homeLink="/", links=[], showButtons=false }) 
           </div>
         </div>
 
-        <div className={ nav ? "sm:hidden absolute flex justify-center w-full text-center bg-primary ease-in duration-300" : "sm:hidden absolute top-0 bottom-0 right-0 left-[-100%] flex justify-center items-center w-full h-screen text-center bg-primary ease-in duration-300"}>
+        <div className={ nav ? "sm:hidden absolute flex justify-center w-full text-center bg-primary ease-in duration-300 z-50" : "sm:hidden absolute top-0 bottom-0 right-0 left-[-100%] flex justify-center items-center w-full h-screen text-center bg-primary ease-in duration-300"}>
           <ul>
           {links && links.length > 0 && (
             links.map((link, index) => (
