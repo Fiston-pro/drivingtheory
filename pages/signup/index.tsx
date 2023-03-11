@@ -1,4 +1,3 @@
-declare module 'react-stepper-horizontal';
 
 import { useState } from 'react'
 import { NextPage } from 'next'
@@ -9,16 +8,22 @@ import Signup4neNbr from '../../components/signup4neNbr'
 import SignupSms from '../../components/signupSms'
 import SignupFinal from '../../components/signupFinal'
 
+import { useAuth } from '../../context/AuthContextProvider'
+
+interface Auth {
+  signup: (number: string) => void;
+
+}
 const SignUpPage: NextPage = () => {
   const [pageValue, setPageValue] = useState(0)
   const [phoneNumber, setPhoneNumber] = useState('')
-  const [smsCode, setSmsCode] = useState<number>()
+  const [smsCode, setSmsCode] = useState()
   const [password, setPassword] = useState('')
 
+  const { signup } = useAuth() as Auth
+
   const handleSignup4neNbr = (number: string) => {
-    console.log(number)
-    setPhoneNumber(number)
-    setPageValue(pageValue + 1);
+    signup(number)
   }
   const handleSignupSms = (number: number) => {
     console.log(number)
@@ -32,6 +37,7 @@ const SignUpPage: NextPage = () => {
   return (
     <div className="min-h-screen">
         <Header showButtons={true}/>
+
         <div className=" flex flex-col justify-center py-12 sm:px-6 lg:px-8">
             <Stepper completeColor={'#C3DCE3'} activeColor={'#2B788B'} steps={ [{title: 'Phone number', onClick: () => setPageValue(0)}, {title: 'SMS code'}, {title: 'Sign Up'}] } activeStep={ pageValue } />
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
